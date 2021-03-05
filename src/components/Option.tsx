@@ -1,16 +1,16 @@
-import React, { FC } from 'react'
-import styled from 'styled-components'
-import { crossColor } from '../data/colors'
-import { ReactComponent as Check } from '../images/check.svg'
+import React, { FC } from "react";
+import styled from "styled-components";
+import { crossColor } from "../data/colors";
+import { ReactComponent as Check } from "../images/check.svg";
 
 interface Props {
-  content: string
-  isActive: boolean
-  onClick?: () => void
+  content: string;
+  isActive: boolean;
+  onClick?: () => void;
 }
 
 interface WrapperProps {
-  isActive: boolean
+  isActive: boolean;
 }
 
 const Wrapper = styled.button<WrapperProps>`
@@ -24,19 +24,19 @@ const Wrapper = styled.button<WrapperProps>`
   width: 100%;
   text-align: left;
   transition: color 0.2s ease-in-out;
-  ${({ isActive }) => (isActive ? `color: ${crossColor};` : '')}
+  ${({ isActive }) => (isActive ? `color: ${crossColor};` : "")}
 
   &:hover {
     color: ${crossColor};
   }
-`
+`;
 
 const CheckWrapper = styled.span`
   display: inline-block;
   width: 16px;
   height: 16px;
   margin-right: 10px;
-`
+`;
 
 const Option: FC<Props> = ({ isActive, onClick, content }) => {
   return (
@@ -48,7 +48,7 @@ const Option: FC<Props> = ({ isActive, onClick, content }) => {
       )}
       {content}
     </Wrapper>
-  )
-}
+  );
+};
 
-export default Option
+export default Option;

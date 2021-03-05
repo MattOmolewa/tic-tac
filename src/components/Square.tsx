@@ -1,18 +1,18 @@
-import React, { FC } from 'react'
-import { NullableSymbol } from '../data/types'
-import { ReactComponent as Circle } from '../images/circle.svg'
-import { ReactComponent as Cross } from '../images/cross.svg'
-import styled from 'styled-components'
-import { circleColor, crossColor } from '../data/colors'
+import React, { FC } from "react";
+import { NullableSymbol } from "../data/types";
+import { ReactComponent as Circle } from "../images/circle.svg";
+import { ReactComponent as Cross } from "../images/cross.svg";
+import styled from "styled-components";
+import { circleColor, crossColor } from "../data/colors";
 
 interface Props {
-  value: NullableSymbol
-  onClick?: () => void
-  disabled?: boolean
+  value: NullableSymbol;
+  onClick?: () => void;
+  disabled?: boolean;
 }
 
 interface ButtonProps {
-  icon: NullableSymbol
+  icon: NullableSymbol;
 }
 
 const Button = styled.button<ButtonProps>`
@@ -26,11 +26,11 @@ const Button = styled.button<ButtonProps>`
   margin: 0;
   position: relative;
 
-  ${(props) => {
-    if (props.icon === 'circle') {
-      return `color: ${circleColor};`
-    } else if (props.icon === 'cross') {
-      return `color: ${crossColor};`
+  ${props => {
+    if (props.icon === "circle") {
+      return `color: ${circleColor};`;
+    } else if (props.icon === "cross") {
+      return `color: ${crossColor};`;
     }
   }}
 
@@ -52,7 +52,7 @@ const Button = styled.button<ButtonProps>`
   }
 
   &::before {
-    content: '';
+    content: "";
     display: block;
     padding-top: 100%;
   }
@@ -64,22 +64,26 @@ const Button = styled.button<ButtonProps>`
   &:active {
     outline: 0;
   }
-`
+`;
 
 const Square: FC<Props> = ({ value, onClick, disabled }) => {
-  let IconImage
+  let IconImage;
 
-  if (value === 'circle') {
-    IconImage = Circle
-  } else if (value === 'cross') {
-    IconImage = Cross
+  if (value === "circle") {
+    IconImage = Circle;
+  } else if (value === "cross") {
+    IconImage = Cross;
   }
 
   return (
-    <Button icon={value} onClick={onClick} disabled={value !== null || disabled}>
+    <Button
+      icon={value}
+      onClick={onClick}
+      disabled={value !== null || disabled}
+    >
       {IconImage && <IconImage />}
     </Button>
-  )
-}
+  );
+};
 
-export default Square
+export default Square;
