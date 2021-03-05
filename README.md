@@ -1,4 +1,4 @@
-# React Tic Tac Toe
+# Tic Tac Toe
 
 This is a elegant Tic Tac Toe game using React for one or two players.
 
