@@ -1,6 +1,9 @@
 # Tic Tac Toe
 
 This is a elegant Tic Tac Toe game using React for one or two players.
+<h4>Demo: https://tic-toe.netlify.app/</h4>
+
+<img src='https://i.postimg.cc/9QbBXTJw/Tic-Tac-Toe.png' border='0' alt='Tic-Tac-Toe'/>
 
 ## Available Scripts
 
